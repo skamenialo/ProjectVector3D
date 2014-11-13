@@ -47,7 +47,8 @@ public class Vector3D {
      * @return długość wektora
      */
     public double length() {
-        return Math.sqrt(x*x+y*y+y*z);
+        //blad y*z
+        return Math.sqrt(x*x+y*y+z*z);
     }//public double lenght 
     
     /**
@@ -56,9 +57,10 @@ public class Vector3D {
      * @return obliczona suma wektorów
      */
     public Vector3D add(Vector3D anotherVector) {
+        //blad z+anotherVector.y
         return new Vector3D(x+anotherVector.x,
                             y+anotherVector.y,
-                            z+anotherVector.y);
+                            z+anotherVector.z);
     }//public Vector3D
             
     /**
@@ -67,7 +69,8 @@ public class Vector3D {
      * @return wektor z pomnożonymi współrzędnymi
      */
     public Vector3D multiplyByScalar(double alpha) {
-        return new Vector3D(alpha*x, alpha*y, alpha*y);
+        //blad alpha*z
+        return new Vector3D(alpha*x, alpha*y, alpha*z);
     }//public Vector3D multiplyScalar        
     
     /**
@@ -76,7 +79,8 @@ public class Vector3D {
      * @return obliczony iloczyn skalarny
      */
     public double dotProduct(Vector3D anotherVector) {
-        return x*anotherVector.x+y*anotherVector.y+y*anotherVector.z;
+        //blad y*anotherVector.z
+        return x*anotherVector.x+y*anotherVector.y+z*anotherVector.z;
     }//public double dotProduct
     
     /**
@@ -85,9 +89,10 @@ public class Vector3D {
      * @return obliczony iloczyn wektorowy
      */
     public Vector3D crossProduct(Vector3D anotherVector) {
+        //blad x*anotherVector.z
         double newX=y*anotherVector.z-z*anotherVector.y;
         double newY=z*anotherVector.x-x*anotherVector.z;
-        double newZ=x*anotherVector.z-y*anotherVector.x;
+        double newZ=x*anotherVector.y-y*anotherVector.x;
         return new Vector3D(newX, newY, newZ);
     }//public Vector3D crossProduct
     
