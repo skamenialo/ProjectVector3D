@@ -21,20 +21,25 @@ public class Vector3DTest {
     public Vector3DTest() {
     }
     
+    
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("Jestem w metodzie setUpClass");
     }
     
     @AfterClass
     public static void tearDownClass() {
+        System.out.println("Jestem w metodzie tearDownClass");
     }
     
     @Before
     public void setUp() {
+        System.out.println("Jestem w metodzie setUp");
     }
     
     @After
     public void tearDown() {
+        System.out.println("Jestem w metodzie tearDown");
     }
 
     @Test

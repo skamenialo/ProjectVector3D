@@ -43,7 +43,8 @@ public class Vector2D {
      * @return długość wektora
      */
     public double length() {
-        return Math.sqrt(x*x+x*y);
+        //blad x*y
+        return Math.sqrt(x*x+y*y);
     }//public double lenght 
     
     /**
@@ -52,8 +53,9 @@ public class Vector2D {
      * @return obliczona suma wektorów
      */
     public Vector2D add(Vector2D anotherVector) {
+        //blad  x+anotherVector.y
         return new Vector2D(x+anotherVector.x,
-                            x+anotherVector.y);
+                            y+anotherVector.y);
     }//public Vector2D add
             
     /**
@@ -62,7 +64,8 @@ public class Vector2D {
      * @return wektor z pomnożonymi współrzędnymi
      */
     public Vector2D multiplyByScalar(double alpha) {
-        return new Vector2D(alpha*x, alpha);
+        //blad samo alpha w drugim polu
+        return new Vector2D(alpha*x, alpha*y);
     }//public Vector2D multiplyScalar        
     
     /**
@@ -71,7 +74,8 @@ public class Vector2D {
      * @return obliczony iloczyn skalarny
      */
     public double dotProduct(Vector2D anotherVector) {
-        return x*anotherVector.x+y*anotherVector.x;
+       //blad y*anotherVector.x
+        return x*anotherVector.x+y*anotherVector.y;
     }//public double dotProduct
     
    /**
